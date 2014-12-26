@@ -1,0 +1,1 @@
+../../CBZSplashView/CBZVectorSplashView.h
