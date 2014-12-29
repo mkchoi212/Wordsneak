@@ -1,12 +1,15 @@
 PODS:
+  - AKPickerView (0.2.0)
   - CBZSplashView (1.0.0)
   - Shapes (1.0.0)
 
 DEPENDENCIES:
+  - AKPickerView
   - CBZSplashView (~> 1.0.0)
   - Shapes
 
 SPEC CHECKSUMS:
+  AKPickerView: 9130c48bfa7436c66b81b779fe0c2bebbc44c85f
   CBZSplashView: 2d5346c06ae78e3f5ed8ea298ef7daccbceddb16
   Shapes: cbd759fac21edf867ef3f3a688364f0da3b85f5e
 

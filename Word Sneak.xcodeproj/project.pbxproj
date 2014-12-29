@@ -23,6 +23,7 @@
 		186C39C01A3B7658005C0E12 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C39BF1A3B7658005C0E12 /* MainNavigationController.m */; };
 		186C39C61A3B8D07005C0E12 /* CXCountDownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C39C51A3B8D07005C0E12 /* CXCountDownLabel.m */; };
 		186EF0681A4F4D6B00F18571 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EF0671A4F4D6B00F18571 /* ResultsViewController.m */; };
+		1871D3C11A51FC430072700E /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1871D3C01A51FC430072700E /* PlayersViewController.m */; };
 		696D97FAB3E84997917E62CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F7CD19EA3848269BA5A518 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		186C39C51A3B8D07005C0E12 /* CXCountDownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCountDownLabel.m; sourceTree = "<group>"; };
 		186EF0661A4F4D6B00F18571 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		186EF0671A4F4D6B00F18571 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		1871D3BF1A51FC430072700E /* PlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
+		1871D3C01A51FC430072700E /* PlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
 		2FC6625A6906433FA0CFF0D4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E3F7CD19EA3848269BA5A518 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 				181B5EC51A3DEFA0003A1055 /* CategoryViewController.h */,
 				181B5EC61A3DEFA0003A1055 /* CategoryViewController.m */,
 				186C399C1A3B6A38005C0E12 /* Main.storyboard */,
+				1871D3BF1A51FC430072700E /* PlayersViewController.h */,
+				1871D3C01A51FC430072700E /* PlayersViewController.m */,
 				186C39B81A3B6A62005C0E12 /* MenuViewController.h */,
 				186C39B91A3B6A62005C0E12 /* MenuViewController.m */,
 				186EF0661A4F4D6B00F18571 /* ResultsViewController.h */,
@@ -328,6 +333,7 @@
 				186C39981A3B6A38005C0E12 /* AppDelegate.m in Sources */,
 				186C39C01A3B7658005C0E12 /* MainNavigationController.m in Sources */,
 				186EF0681A4F4D6B00F18571 /* ResultsViewController.m in Sources */,
+				1871D3C11A51FC430072700E /* PlayersViewController.m in Sources */,
 				186C39951A3B6A37005C0E12 /* main.m in Sources */,
 				186C39BA1A3B6A62005C0E12 /* MenuViewController.m in Sources */,
 				186C39C61A3B8D07005C0E12 /* CXCountDownLabel.m in Sources */,

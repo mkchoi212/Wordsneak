@@ -1,3 +1,4 @@
 platform :ios, '8.0'
 pod 'CBZSplashView', '~>1.0.0'
+pod 'AKPickerView'
 pod 'Shapes'
