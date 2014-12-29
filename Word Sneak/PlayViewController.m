@@ -11,7 +11,7 @@
 #import "YQLoginCardView.h"
 #import "PlayViewController.h"
 #import "correctView.h"
-#import "ResultsCollectionViewController.h"
+#import "ResultsViewController.h"
 
 @interface PlayViewController (){
     UIView *leftView;
@@ -56,7 +56,7 @@
     //THE RESULT PAGE
     else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ResultsCollectionViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
+        ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
         results.p1_score = self.player1_score;
         results.p2_score = self.player2_score;
         results.p3_score = self.player3_score;
@@ -71,7 +71,7 @@
     //THE RESULT PAGE
     else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ResultsCollectionViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
+        ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
         results.p1_score = self.player1_score;
         results.p2_score = self.player2_score;
         results.p3_score = self.player3_score;
@@ -217,12 +217,11 @@
 
 - (IBAction)quit:(id)sender {
      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ResultsCollectionViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
+    ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
     results.p1_score = self.player1_score;
     results.p2_score = self.player2_score;
     results.p3_score = self.player3_score;
     results.p4_score = self.player4_score;
-    [self.navigationController pushViewController:results animated:YES];
-
+  
 }
 @end
