@@ -8,6 +8,8 @@
 
 #import "MenuViewController.h"
 #import "CBZSplashView.h"
+#import <RWBlurPopover/RWBlurPopover.h>
+#import "RWTestViewController.h"
 
 @interface MenuViewController ()
 @property (nonatomic, strong) CBZSplashView *splashView;
@@ -42,5 +44,31 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+#pragma mark ABOUT INFO SHEET
+
+- (void)showFormSheet {
+    MenuViewController *vc = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.modalPresentationStyle = UIModalPresentationPopover;
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showTestPopover {
+    RWTestViewController *vc = [[RWTestViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [RWBlurPopover showContentViewController:nav insideViewController:self];
+}
+
+- (IBAction)aboutButton:(id)sender {
+    [self showTestPopover];
 }
 @end

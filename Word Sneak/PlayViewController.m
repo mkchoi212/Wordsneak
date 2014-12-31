@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <AVFoundation/AVFoundation.h>
 #import "YQLoginCardView.h"
 #import "PlayViewController.h"
 #import "correctView.h"
@@ -23,7 +24,7 @@
 @end
 
 @implementation PlayViewController
-
+    AVAudioPlayer *correctAudio;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +37,7 @@
 
     
     word_list = [[NSMutableArray alloc]initWithObjects:@"Baddonkadonk",
-                 @"Grape Nuts", @"Pulp Fiction", @"Loofah", @"Floss", @"Female Bodybuilder", @"Oompa Loompa", @"Corn", @"Calamari", @"Moose", @"Zucchini", @"Pantaloons", @"Friend-zone", @"Kumquat", @"Pelvis", @"Couscous", @"Chicken Gordon Blue", @"Taco Tuesday", @"Taco Bell", @"Bill Cosby", @"Mexican Pizza", @"Toothbrush", @"Jonah Hill", @"Protein Shake", nil];
+                 @"Grape Nuts", @"Pulp Fiction", @"Loofah", @"Floss", @"Female Bodybuilder", @"Oompa Loompa", @"Corn", @"Calamari", @"Moose", @"Zucchini", @"Pantaloons", @"Friend-zone", @"Kumquat", @"Pelvis", @"Couscous", @"Chicken Gordon Blue", @"Taco Tuesday", @"Taco Bell", @"Bill Cosby", @"Mexican Pizza", @"Toothbrush", @"Jonah Hill", @"Protein Shake", @"Ohio", @"Bunny Suit", @"Quinoa", nil];
     
     naughty_list = [[NSMutableArray alloc]initWithObjects: @"Anal Beads", @"Reverse Cowgirl", @"AIDS", @"Ghonoeria", @"Dildo", @"Hairy Penis", @"Cunt", @"Babies with Aids", @"Climax", @"Pubes", @"Jizz", @"Douche", @"Curved Penis", @"Condom", @"Water Soluble Lube", @"Spermicidal Lube", @"AIDS", @"STD", @"Banana Dick", @"Motorboat", @"Rape", @"Strap-on", @"Flavored Condoms", @"Glow in the Dark", @"Condoms", @"Pussy Monster", @"Crusty", @"Dirty Sanchez", @"Motherfucker", nil];
     
@@ -47,35 +48,45 @@
         da_list = [NSMutableArray arrayWithArray:naughty_list];
 
     }
-    
+        NSLog(@"%d", self.playerNumber);
 }
 
 - (IBAction)correctButton:(id)sender {
-    
+    NSURL *musicFile;
+    musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"correct" ofType:@"wav"]];
+    correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    [correctAudio play];
+
     if(da_list.count!=0) { [self correctomundo]; }
     //THE RESULT PAGE
     else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
-        results.p1_score = self.player1_score;
-        results.p2_score = self.player2_score;
-        results.p3_score = self.player3_score;
-        results.p4_score = self.player4_score;
+        results.p1_score = playerScores[0];
+        results.p2_score = playerScores[1];
+        results.p3_score = playerScores[2];
+        results.p4_score = playerScores[3];
+        
         [self.navigationController pushViewController:results animated:YES];
     }
     
 }
 
 - (IBAction)wrongButton:(id)sender {
+    NSURL *musicFile;
+    musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"wrong" ofType:@"wav"]];
+    correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    [correctAudio play];
+
     if(da_list.count!=0) { [self wrongNumba]; }
     //THE RESULT PAGE
     else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
-        results.p1_score = self.player1_score;
-        results.p2_score = self.player2_score;
-        results.p3_score = self.player3_score;
-        results.p4_score = self.player4_score;
+        results.p1_score = playerScores[0];
+        results.p2_score = playerScores[1];
+        results.p3_score = playerScores[2];
+        results.p4_score = playerScores[3];
         [self.navigationController pushViewController:results animated:YES];
     }
 }
@@ -102,17 +113,56 @@
     YQLoginCardView *loginCardView = [[YQLoginCardView alloc] init];
     correctView *theView = [[[NSBundle mainBundle] loadNibNamed:@"correctView" owner:self options:nil] objectAtIndex:0];
         theView.headline.text = @"CORRECT";
-    if (numberPressed % 2){
-        theView.playerComment.text = @"Player 2's Turn";
-        self.player1_score++;
+    
+    switch (self.playerNumber){
+        case 0:
+            theView.playerComment.text = @"You, again";
+            playerScores[0]++;
+            break;
+            
+        case 1:
+            if (numberPressed % 2){
+                theView.playerComment.text = @"Player 2's Turn";
+                playerScores[0]++;
+            }
+            else {
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[1]++;
+            }
+            break;
+            
+        case 2:
+            if (numberPressed > 4){
+                numberPressed = 0;
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[2]++;
+            }
+            else{
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                theView.playerComment.text = thecomment;
+                playerScores[numberPressed]++;
+            }
+            break;
+            
+        case 3:
+            if (numberPressed > 5){
+                numberPressed = 0;
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[3]++;
+            }
+            else{
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                theView.playerComment.text = thecomment;
+                playerScores[numberPressed]++;
+            }
+            break;
+            
+        default:
+            break;
     }
-    else {
-         theView.playerComment.text = @"Player 1's Turn";
-        self.player2_score++;
-    }
+    
     [loginCardView addSubview:theView];
     [loginCardView showView];
-    
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(nextWord:) userInfo:nil repeats:NO];
 
 }
@@ -123,14 +173,54 @@
     theView.headline.text = @"CAUGHT!";
     theView.backgroundColor = [UIColor colorWithRed:186.0/255.0 green:23.0/255.0 blue:29.0/255.0 alpha:1];
 
-    if (numberPressed % 2){
-        theView.playerComment.text = @"Player 2's Turn";
-        self.player1_score--;
+    switch (self.playerNumber){
+        case 0:
+            theView.playerComment.text = @"You, again";
+            playerScores[0]--;
+            break;
+            
+        case 1:
+            if (numberPressed % 2){
+                theView.playerComment.text = @"Player 2's Turn";
+                playerScores[0]--;
+            }
+            else {
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[1]--;
+            }
+            break;
+            
+        case 2:
+            if (numberPressed > 4){
+                numberPressed = 0;
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[2]--;
+            }
+            else{
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                theView.playerComment.text = thecomment;
+                playerScores[numberPressed]--;
+            }
+            break;
+            
+        case 3:
+            if (numberPressed > 5){
+                numberPressed = 0;
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[3]--;
+            }
+            else{
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                theView.playerComment.text = thecomment;
+                playerScores[numberPressed]--;
+            }
+            break;
+            
+        default:
+            break;
     }
-    else {
-        theView.playerComment.text = @"Player 1's Turn";
-        self.player2_score--;
-    }
+
+    
     [loginCardView addSubview:theView];
     [loginCardView showView];
     
@@ -211,17 +301,13 @@
     [self setTimer];
 }
 
-
-
-
-
 - (IBAction)quit:(id)sender {
      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
-    results.p1_score = self.player1_score;
-    results.p2_score = self.player2_score;
-    results.p3_score = self.player3_score;
-    results.p4_score = self.player4_score;
+    results.p1_score = playerScores[0];
+    results.p2_score = playerScores[1];
+    results.p3_score = playerScores[2];
+    results.p4_score = playerScores[3];
   
 }
 @end

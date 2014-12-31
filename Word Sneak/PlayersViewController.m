@@ -7,6 +7,7 @@
 //
 
 #import "PlayersViewController.h"
+#import "PlayViewController.h"
 
 @interface PlayersViewController () <AKPickerViewDelegate, AKPickerViewDataSource>
 @property (nonatomic, strong) NSArray *titles;
@@ -21,13 +22,14 @@
     self.pickerView = [[AKPickerView alloc] initWithFrame:self.view.bounds];
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
+    self.automaticallyAdjustsScrollViewInsets = false;
     self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.pickerView];
     
-    self.pickerView.font = [UIFont fontWithName:@"AvenirNext-Regular" size:30];
-    self.pickerView.highlightedFont = [UIFont fontWithName:@"AvenirNext-Medium" size:30];
+    self.pickerView.font = [UIFont fontWithName:@"AvenirNext-Regular" size:40];
+    self.pickerView.highlightedFont = [UIFont fontWithName:@"AvenirNext-Medium" size:40];
     self.pickerView.interitemSpacing = 20.0;
-    self.pickerView.fisheyeFactor = 0.001;
+    self.pickerView.fisheyeFactor = 0.002;
     self.pickerView.pickerViewStyle = AKPickerViewStyle3D;
     
     self.titles = @[@"1 PLAYA", @"2 PLAYERS", @"3 PLAYERS", @"4 PLAYERS"];
@@ -48,8 +50,13 @@
 
 - (void)pickerView:(AKPickerView *)pickerView didSelectItem:(NSInteger)item
 {
-    NSLog(@"%@", self.titles[item]);
+
+    PlayViewController *playScreen = [[PlayViewController alloc] init];
+    playScreen.playerNumber = item;
+    NSLog(@"%d", playScreen.playerNumber);
+
+    
 }
 - (IBAction)goPlaya:(id)sender {
-}
+    }
 @end

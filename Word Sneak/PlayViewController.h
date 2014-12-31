@@ -15,7 +15,7 @@
     NSMutableArray *word_list;
     NSMutableArray *naughty_list;
     NSMutableArray *da_list;
-    
+    int playerScores[4];
 }
 
 - (IBAction)tap_start:(id)sender;
@@ -34,10 +34,8 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *intro_tap;
 @property (nonatomic, assign) NSInteger category;
 - (IBAction)quit:(id)sender;
-@property (nonatomic) NSInteger player1_score;
-@property (nonatomic) NSInteger player2_score;
-@property (nonatomic) NSInteger player3_score;
-@property (nonatomic) NSInteger player4_score;
+
+@property (nonatomic) int playerNumber;
 
 @end
 

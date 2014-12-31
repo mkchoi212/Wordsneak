@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
+- (IBAction)aboutButton:(id)sender;
 
 @end

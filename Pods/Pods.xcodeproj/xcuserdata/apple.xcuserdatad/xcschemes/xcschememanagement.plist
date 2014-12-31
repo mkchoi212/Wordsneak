@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-AMTagListView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CBZSplashView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RWBlurPopover.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40732FCD5BF94A36B8B599A7</key>
+		<key>3D831C9AEDBC43C6BA8E2EDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DD3ECA33B1C464495E94849</key>
+		<key>519283419C284A10BFF44B7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93D144FAC33C496891031740</key>
+		<key>51D34FD40BAD4DA4A15A2209</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF5C04153C7E452794E54CBF</key>
+		<key>7EC38C8B44404B6B9D8F9572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8451EB33E524C9B83A900E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F37CCFBA4FA3400B9D169EDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

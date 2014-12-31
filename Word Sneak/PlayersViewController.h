@@ -10,7 +10,9 @@
 #import "AKPickerView.h"
 
 @interface PlayersViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
+@property (nonatomic) NSInteger number;
 - (IBAction)goPlaya:(id)sender;
 
 @end
