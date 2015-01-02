@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AMViewController : UIViewController
+@property (nonatomic, weak) NSMutableArray *customList;
 
 @end

@@ -24,23 +24,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-		
+    self.title = @"Custom Word List";
 	[self.textField.layer setBorderColor:UIColorFromRGB(0xFFFFFF).CGColor];
 	[self.textField.layer setBorderWidth:2];
 	[self.textField setDelegate:self];
     
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"ADD WORD" attributes:@{ NSForegroundColorAttributeName : [UIColor lightGrayColor] }];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"add word" attributes:@{ NSForegroundColorAttributeName : [UIColor lightGrayColor] }];
     self.textField.attributedPlaceholder = str;
     
 	[[AMTagView appearance] setTagLength:10];
 	[[AMTagView appearance] setTextPadding:14];
-	[[AMTagView appearance] setTextFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16]];
-	[[AMTagView appearance] setTagColor:UIColorFromRGB(0x1f8dd6)];
+	[[AMTagView appearance] setTextFont:[UIFont fontWithName:@"Baskerville" size:26]];
+	[[AMTagView appearance] setTagColor:UIColorFromRGB(0x848484)];
 	
-	[self.tagListView addTag:@"my tag"];
-	[self.tagListView addTag:@"something"];
-	[self.tagListView addTag:@"long tag is long"];
-	[self.tagListView addTag:@"hi there"];
     
     self.tagListView.tagListDelegate = self;
 	
@@ -54,12 +50,7 @@
 											  otherButtonTitles:@"Yes", nil];
 		[alert show];
 	}];
-}
 
-- (BOOL)tagList:(AMTagListView *)tagListView shouldAddTagWithText:(NSString *)text resultingContentSize:(CGSize)size
-{
-    // Don't add a 'bad' tag
-    return [text isEqualToString:@"bad"];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -69,10 +60,15 @@
 	}
 }
 
+- (BOOL)tagList:(AMTagListView *)tagListView shouldAddTagWithText:(NSString *)text resultingContentSize:(CGSize)size
+{
+   return 1;
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	[self.tagListView addTag:textField.text];
-	[self.textField setText:@""];
+	[self.textField setText:@" "];
+    [self.customList addObject:textField.text];
 	return YES;
 }
 
