@@ -49,9 +49,8 @@
         da_list = [NSMutableArray arrayWithArray:naughty_list];
 
     }
-    PlayersViewController *players = [[PlayersViewController alloc] init];
                             
-        NSLog(@"%ld", players.playScreen.playerNumber);
+        NSLog(@"%ld", self.playerNumber);
 }
 
 - (IBAction)correctButton:(id)sender {
@@ -117,9 +116,7 @@
     correctView *theView = [[[NSBundle mainBundle] loadNibNamed:@"correctView" owner:self options:nil] objectAtIndex:0];
         theView.headline.text = @"CORRECT";
     
-    
-    PlayersViewController *players = [[PlayersViewController alloc] init];
-    switch (players.playScreen.playerNumber){
+    switch (self.playerNumber){
         case 0:
             theView.playerComment.text = @"You, again";
             playerScores[0]++;
@@ -172,14 +169,13 @@
 
 }
 - (void)wrongNumba{
-PlayersViewController *players = [[PlayersViewController alloc] init];
     ++numberPressed;
     YQLoginCardView *loginCardView = [[YQLoginCardView alloc] init];
     correctView *theView = [[[NSBundle mainBundle] loadNibNamed:@"correctView" owner:self options:nil] objectAtIndex:0];
     theView.headline.text = @"CAUGHT!";
     theView.backgroundColor = [UIColor colorWithRed:186.0/255.0 green:23.0/255.0 blue:29.0/255.0 alpha:1];
 
-    switch (players.playScreen.playerNumber){
+    switch (self.playerNumber){
         case 0:
             theView.playerComment.text = @"You, again";
             playerScores[0]--;
