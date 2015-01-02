@@ -29,6 +29,7 @@
 		1871D3CC1A5261730072700E /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CA1A5261730072700E /* correct.wav */; };
 		1871D3CD1A5261730072700E /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CB1A5261730072700E /* wrong.wav */; };
 		1871D3D01A5263580072700E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3CE1A5261B30072700E /* AVFoundation.framework */; };
+		18B636031A549B9F0072AD10 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B636021A549B9F0072AD10 /* LaunchViewController.m */; };
 		18D200031A53759B00024F4A /* AMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D200021A53759B00024F4A /* AMViewController.m */; };
 		18D2000A1A5385F600024F4A /* RWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D200081A5385F600024F4A /* RWTestViewController.m */; };
 		18D2000B1A5385F600024F4A /* RWTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D200091A5385F600024F4A /* RWTestViewController.xib */; };
@@ -86,6 +87,8 @@
 		1871D3CA1A5261730072700E /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../../../../Downloads/correct.wav; sourceTree = "<group>"; };
 		1871D3CB1A5261730072700E /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = ../../../../Downloads/wrong.wav; sourceTree = "<group>"; };
 		1871D3CE1A5261B30072700E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18B636011A549B9F0072AD10 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		18B636021A549B9F0072AD10 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		18D200011A53759B00024F4A /* AMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMViewController.h; sourceTree = "<group>"; };
 		18D200021A53759B00024F4A /* AMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMViewController.m; sourceTree = "<group>"; };
 		18D200071A5385F600024F4A /* RWTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTestViewController.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 			children = (
 				186C39961A3B6A37005C0E12 /* AppDelegate.h */,
 				186C39971A3B6A38005C0E12 /* AppDelegate.m */,
+				18B636011A549B9F0072AD10 /* LaunchViewController.h */,
+				18B636021A549B9F0072AD10 /* LaunchViewController.m */,
 				186C39BE1A3B7658005C0E12 /* MainNavigationController.h */,
 				186C39BF1A3B7658005C0E12 /* MainNavigationController.m */,
 				186C39991A3B6A38005C0E12 /* PlayViewController.h */,
@@ -377,6 +382,7 @@
 				183156231A40C0320052DDE5 /* YQLoginCardView.m in Sources */,
 				183156221A40C0320052DDE5 /* YQCardBaseView.m in Sources */,
 				18D200031A53759B00024F4A /* AMViewController.m in Sources */,
+				18B636031A549B9F0072AD10 /* LaunchViewController.m in Sources */,
 				186C39981A3B6A38005C0E12 /* AppDelegate.m in Sources */,
 				18D2000A1A5385F600024F4A /* RWTestViewController.m in Sources */,
 				186C39C01A3B7658005C0E12 /* MainNavigationController.m in Sources */,

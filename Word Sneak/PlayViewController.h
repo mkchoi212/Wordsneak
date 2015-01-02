@@ -35,7 +35,8 @@
 @property (nonatomic, assign) NSInteger category;
 - (IBAction)quit:(id)sender;
 
-@property (nonatomic) int playerNumber;
+@property (nonatomic) NSInteger playerNumber;
+@property (nonatomic, strong) PlayViewController *playScreen;
 
 @end
 

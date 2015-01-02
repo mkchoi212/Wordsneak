@@ -2,6 +2,9 @@ PODS:
   - AKPickerView (0.2.0)
   - AMTagListView (0.5)
   - CBZSplashView (1.0.0)
+  - DRDynamicSlideShow (1.0.1)
+  - JazzHands (0.1.1)
+  - MMAppSwitcher (0.2.0)
   - RWBlurPopover (3.0.1)
   - Shapes (1.0.0)
 
@@ -9,6 +12,9 @@ DEPENDENCIES:
   - AKPickerView
   - AMTagListView
   - CBZSplashView (~> 1.0.0)
+  - DRDynamicSlideShow
+  - JazzHands
+  - MMAppSwitcher
   - RWBlurPopover (~> 3.0.0)
   - Shapes
 
@@ -16,6 +22,9 @@ SPEC CHECKSUMS:
   AKPickerView: 9130c48bfa7436c66b81b779fe0c2bebbc44c85f
   AMTagListView: 55d35018b63a78a7f117a8424c2d9df31c960adb
   CBZSplashView: 2d5346c06ae78e3f5ed8ea298ef7daccbceddb16
+  DRDynamicSlideShow: 5ae80fabf64f8808971409d40380bde3f7c671a9
+  JazzHands: d39c6b19bfe34946d220fdede80930b7be37f199
+  MMAppSwitcher: 83d42bf769c28cc3a1c6e744d221eed199dc8298
   RWBlurPopover: 4abc071d7f171db621591d450958de46a8e3f839
   Shapes: cbd759fac21edf867ef3f3a688364f0da3b85f5e
 

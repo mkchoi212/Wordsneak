@@ -24,6 +24,24 @@
 #define COCOAPODS_VERSION_MINOR_CBZSplashView 0
 #define COCOAPODS_VERSION_PATCH_CBZSplashView 0
 
+// DRDynamicSlideShow
+#define COCOAPODS_POD_AVAILABLE_DRDynamicSlideShow
+#define COCOAPODS_VERSION_MAJOR_DRDynamicSlideShow 1
+#define COCOAPODS_VERSION_MINOR_DRDynamicSlideShow 0
+#define COCOAPODS_VERSION_PATCH_DRDynamicSlideShow 1
+
+// JazzHands
+#define COCOAPODS_POD_AVAILABLE_JazzHands
+#define COCOAPODS_VERSION_MAJOR_JazzHands 0
+#define COCOAPODS_VERSION_MINOR_JazzHands 1
+#define COCOAPODS_VERSION_PATCH_JazzHands 1
+
+// MMAppSwitcher
+#define COCOAPODS_POD_AVAILABLE_MMAppSwitcher
+#define COCOAPODS_VERSION_MAJOR_MMAppSwitcher 0
+#define COCOAPODS_VERSION_MINOR_MMAppSwitcher 2
+#define COCOAPODS_VERSION_PATCH_MMAppSwitcher 0
+
 // RWBlurPopover
 #define COCOAPODS_POD_AVAILABLE_RWBlurPopover
 #define COCOAPODS_VERSION_MAJOR_RWBlurPopover 3

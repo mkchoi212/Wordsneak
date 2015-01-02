@@ -7,7 +7,6 @@
 //
 
 #import "PlayersViewController.h"
-#import "PlayViewController.h"
 
 @interface PlayersViewController () <AKPickerViewDelegate, AKPickerViewDataSource>
 @property (nonatomic, strong) NSArray *titles;
@@ -50,13 +49,14 @@
 
 - (void)pickerView:(AKPickerView *)pickerView didSelectItem:(NSInteger)item
 {
+    if (nil == self.playScreen)
+    {
+        self.playScreen = [[PlayViewController alloc] init];
+    }
 
-    PlayViewController *playScreen = [[PlayViewController alloc] init];
-    playScreen.playerNumber = item;
-    NSLog(@"%d", playScreen.playerNumber);
-
-    
+    self.playScreen.playerNumber = item;
+    NSLog(@"%ld", (long)self.playScreen.playerNumber);
 }
 - (IBAction)goPlaya:(id)sender {
-    }
+}
 @end
