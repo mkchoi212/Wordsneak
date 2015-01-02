@@ -73,6 +73,10 @@
     [self dismissViewControllerAnimated:NO completion:nil];
     [self presentViewController:[[[[UIApplication sharedApplication] delegate] window] rootViewController]
                        animated:NO
-                     completion:nil];}
+                     completion:nil];
+}
+
+#pragma mark Rotation lock
+
 
 @end

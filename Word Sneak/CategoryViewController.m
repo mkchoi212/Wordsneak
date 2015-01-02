@@ -35,5 +35,7 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
+#pragma mark Rotation lock
+
 
 @end

@@ -59,4 +59,8 @@
 }
 - (IBAction)goPlaya:(id)sender {
 }
+
+#pragma mark Rotation lock
+
+
 @end

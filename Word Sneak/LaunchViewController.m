@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-        // Set the slide show view's alpha so that we can fade it in later
+
+    // Set the slide show view's alpha so that we can fade it in later
         [self.slideShow setAlpha:0];
         
         // Set the content size
@@ -102,5 +102,11 @@
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
 }
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait + UIInterfaceOrientationMaskPortraitUpsideDown;
+}
+
 
 @end

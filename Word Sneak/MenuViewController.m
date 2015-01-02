@@ -71,4 +71,8 @@
 - (IBAction)aboutButton:(id)sender {
     [self showTestPopover];
 }
+
+#pragma mark Rotation lock
+
+
 @end
