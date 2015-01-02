@@ -10,5 +10,6 @@
 
 @interface MenuViewController : UIViewController
 - (IBAction)aboutButton:(id)sender;
+- (IBAction)tutorialButton:(id)sender;
 
 @end

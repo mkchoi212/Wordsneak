@@ -91,6 +91,9 @@
                                 <state key="normal" title="TUTORIAL">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tutorialButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gu-c0-TmZ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slide1" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-eR-qQ1">
                                 <rect key="frame" x="167" y="59" width="234" height="201"/>
@@ -676,8 +679,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="a1" destination="9ZA-8f-Iw4" id="rnN-jU-pms"/>
+                        <outlet property="a2" destination="1oW-Jn-FPj" id="EIc-Wz-Ux1"/>
+                        <outlet property="arrow1" destination="49U-nY-9oU" id="kZi-4Y-6kW"/>
+                        <outlet property="arrow2" destination="HEB-FW-W5e" id="s0P-NN-ihO"/>
+                        <outlet property="d1" destination="Vj6-l2-07G" id="fbc-Fq-94T"/>
+                        <outlet property="d2" destination="0TG-x6-9ok" id="dcK-HD-KFe"/>
                         <outlet property="pageControl" destination="bEs-Kn-6Ef" id="huA-8f-FtX"/>
+                        <outlet property="pic_2" destination="uRM-CA-Kcm" id="X0a-f1-rW3"/>
                         <outlet property="slideShow" destination="5es-VJ-g2O" id="JVO-sT-zo9"/>
+                        <outlet property="thumbs" destination="kUM-du-HjI" id="wTY-sn-Sbi"/>
+                        <outlet property="title_1" destination="54S-nT-V1u" id="KMi-nN-SWf"/>
+                        <outlet property="title_11" destination="kUP-Kn-r0R" id="hbc-Pq-Tcu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOd-qC-KoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -47,54 +47,46 @@
     #pragma mark Page 0
      
      // RISING TO TOP ANIMATION
-    /* [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.intitle_0 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.intitle_0.center.x+self.slideShow.frame.size.width, self.intitle_0.center.y-self.slideShow.frame.size.height)] delay:0]];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.title_1 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.title_1.center.x+self.slideShow.frame.size.width, self.title_1.center.y-self.slideShow.frame.size.height)] delay:0]];
      
-     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.indes_0 page:0 keyPath:@"alpha" toValue:@0 delay:0.5]];
+     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.title_11 page:0 keyPath:@"alpha" toValue:@0 delay:0.5]];
      
      // DROPPING BELLOW ANIMATION
-     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.indes_0 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.indes_0.center.x+self.slideShow.frame.size.width, self.indes_0.center.y+self.slideShow.frame.size.height*2)] delay:0]];
-     
+     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.title_11 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.title_11.center.x+self.slideShow.frame.size.width, self.title_11.center.y+self.slideShow.frame.size.height*2)] delay:0]];
+    
      #pragma mark Page 1
-    
-    // DROPPING FROM TOP
 
-    [self.inpic_1 setCenter:CGPointMake(self.inpic_1.center.x-self.slideShow.frame.size.width, self.inpic_1.center.y-self.slideShow.frame.size.height)];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_1 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.inpic_1.center.x+self.slideShow.frame.size.width, self.inpic_1.center.y+self.slideShow.frame.size.height)] delay:0]];
-    
-    [self.inpic_11 setCenter:CGPointMake(self.inpic_11.center.x-self.slideShow.frame.size.width, self.inpic_11.center.y-self.slideShow.frame.size.height)];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_11 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.inpic_11.center.x+self.slideShow.frame.size.width, self.inpic_11.center.y+self.slideShow.frame.size.height)] delay:0]];
-    
+    [self.pic_2 setCenter:CGPointMake(self.pic_2.center.x-self.slideShow.frame.size.width, self.pic_2.center.y-self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.pic_2 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.pic_2.center.x+self.slideShow.frame.size.width, self.pic_2.center.y+self.slideShow.frame.size.height)] delay:0]];
+
+   
     
     // DROPPING FROM BOTTOM
     
-    [self.inpic_111 setCenter:CGPointMake(self.inpic_111.center.x-self.slideShow.frame.size.width, self.inpic_111.center.y+self.slideShow.frame.size.height)];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_111 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.inpic_111.center.x+self.slideShow.frame.size.width, self.inpic_111.center.y-self.slideShow.frame.size.height)] delay:0]];
+    [self.a1 setCenter:CGPointMake(self.a1.center.x-self.slideShow.frame.size.width, self.a1.center.y+self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.a1 page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.a1.center.x+self.slideShow.frame.size.width, self.a1.center.y-self.slideShow.frame.size.height)] delay:0]];
     
-    [self.inpic_1111 setCenter:CGPointMake(self.inpic_1111.center.x-self.slideShow.frame.size.width, self.inpic_1111.center.y+self.slideShow.frame.size.height)];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_1111 page:0 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.inpic_1111.center.x+self.slideShow.frame.size.width, self.inpic_1111.center.y-self.slideShow.frame.size.height)] delay:0]];
+    [self.a2 setCenter:CGPointMake(self.a2.center.x-self.slideShow.frame.size.width, self.a2.center.y+self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.a2 page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.a2.center.x+self.slideShow.frame.size.width, self.a2.center.y-self.slideShow.frame.size.height)] delay:0]];
+
     
-     
-     #pragma mark Page 2
-     
-     // ROLLING IN ANIMATION
-     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_2 page:1 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
-     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_22 page:1 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
-     
-     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_222 page:1 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
-     
-     #pragma mark Page 3
+    [self.arrow1 setCenter:CGPointMake(self.arrow1.center.x-self.slideShow.frame.size.width, self.arrow1.center.y+self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.arrow1 page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.arrow1.center.x+self.slideShow.frame.size.width, self.arrow1.center.y-self.slideShow.frame.size.height)] delay:0]];
     
-    [self.inpic_3 setCenter:CGPointMake(self.inpic_3.center.x-self.slideShow.frame.size.width, self.inpic_3.center.y+self.slideShow.frame.size.height)];
+    [self.arrow2 setCenter:CGPointMake(self.arrow2.center.x-self.slideShow.frame.size.width, self.arrow2.center.y+self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.arrow2 page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.arrow2.center.x+self.slideShow.frame.size.width, self.arrow2.center.y-self.slideShow.frame.size.height)] delay:0]];
     
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_3 page:2 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.inpic_3.center.x+self.slideShow.frame.size.width, self.inpic_3.center.y-self.slideShow.frame.size.height)] delay:0]];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.d1 page:3 keyPath:@"alpha" toValue:@0 delay:0.5]];
+
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.d1 page:3 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.d1.center.x+self.slideShow.frame.size.width, self.d1.center.y+self.slideShow.frame.size.height*2)] delay:0]];
+
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.d2 page:3 keyPath:@"alpha" toValue:@0 delay:0.5]];
+    
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.d2 page:3 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.d2.center.x+self.slideShow.frame.size.width, self.d2.center.y+self.slideShow.frame.size.height*2)] delay:0]];
 
      
-    # pragma mark Page 4
-    
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inname_4 page:3 keyPath:@"alpha" fromValue:@0 toValue:@1 delay:0.75]];
-    
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_4 page:3 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.inpic_44 page:3 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];*/
+      [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:3 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
+   
 
 }
 
