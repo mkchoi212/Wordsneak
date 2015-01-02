@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DRDynamicSlideShow.h"
 
 @interface TutorialViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *thumbs;
+@property (weak, nonatomic) IBOutlet DRDynamicSlideShow *slideShow;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+- (IBAction)gucci:(id)sender;
 @end

@@ -12,6 +12,7 @@
 		183156221A40C0320052DDE5 /* YQCardBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831561F1A40C0320052DDE5 /* YQCardBaseView.m */; };
 		183156231A40C0320052DDE5 /* YQLoginCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183156211A40C0320052DDE5 /* YQLoginCardView.m */; };
 		183156291A40C92C0052DDE5 /* correctView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183156281A40C92C0052DDE5 /* correctView.m */; };
+		185BC7581A572C7200309675 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BC7571A572C7200309675 /* SettingsTableViewController.m */; };
 		186C39951A3B6A37005C0E12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C39941A3B6A37005C0E12 /* main.m */; };
 		186C39981A3B6A38005C0E12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C39971A3B6A38005C0E12 /* AppDelegate.m */; };
 		186C399B1A3B6A38005C0E12 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C399A1A3B6A38005C0E12 /* PlayViewController.m */; };
@@ -56,6 +57,8 @@
 		183156211A40C0320052DDE5 /* YQLoginCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoginCardView.m; sourceTree = "<group>"; };
 		183156271A40C92C0052DDE5 /* correctView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = correctView.h; sourceTree = "<group>"; };
 		183156281A40C92C0052DDE5 /* correctView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = correctView.m; sourceTree = "<group>"; };
+		185BC7561A572C7200309675 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		185BC7571A572C7200309675 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		186C398F1A3B6A37005C0E12 /* Word Sneak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Sneak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C39931A3B6A37005C0E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186C39941A3B6A37005C0E12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,26 +156,20 @@
 		186C39911A3B6A37005C0E12 /* Word Sneak */ = {
 			isa = PBXGroup;
 			children = (
-				186C39961A3B6A37005C0E12 /* AppDelegate.h */,
-				186C39971A3B6A38005C0E12 /* AppDelegate.m */,
-				18B636011A549B9F0072AD10 /* LaunchViewController.h */,
-				18B636021A549B9F0072AD10 /* LaunchViewController.m */,
-				186C39BE1A3B7658005C0E12 /* MainNavigationController.h */,
-				186C39BF1A3B7658005C0E12 /* MainNavigationController.m */,
+				18D2000C1A53860500024F4A /* Menu & Launch */,
 				186C39991A3B6A38005C0E12 /* PlayViewController.h */,
 				186C399A1A3B6A38005C0E12 /* PlayViewController.m */,
-				186C39BB1A3B7432005C0E12 /* TutorialViewController.h */,
-				186C39BC1A3B7432005C0E12 /* TutorialViewController.m */,
 				181B5EC51A3DEFA0003A1055 /* CategoryViewController.h */,
 				181B5EC61A3DEFA0003A1055 /* CategoryViewController.m */,
 				186C399C1A3B6A38005C0E12 /* Main.storyboard */,
 				1871D3BF1A51FC430072700E /* PlayersViewController.h */,
 				1871D3C01A51FC430072700E /* PlayersViewController.m */,
-				18D2000C1A53860500024F4A /* Menu */,
 				186EF0661A4F4D6B00F18571 /* ResultsViewController.h */,
 				186EF0671A4F4D6B00F18571 /* ResultsViewController.m */,
 				18D200011A53759B00024F4A /* AMViewController.h */,
 				18D200021A53759B00024F4A /* AMViewController.m */,
+				185BC7561A572C7200309675 /* SettingsTableViewController.h */,
+				185BC7571A572C7200309675 /* SettingsTableViewController.m */,
 				186C399F1A3B6A38005C0E12 /* Images.xcassets */,
 				183156301A4100D40052DDE5 /* CORRECT */,
 				186C39921A3B6A37005C0E12 /* Supporting Files */,
@@ -214,16 +211,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18D2000C1A53860500024F4A /* Menu */ = {
+		18D2000C1A53860500024F4A /* Menu & Launch */ = {
 			isa = PBXGroup;
 			children = (
+				186C39961A3B6A37005C0E12 /* AppDelegate.h */,
+				186C39971A3B6A38005C0E12 /* AppDelegate.m */,
+				186C39BE1A3B7658005C0E12 /* MainNavigationController.h */,
+				186C39BF1A3B7658005C0E12 /* MainNavigationController.m */,
+				18B636011A549B9F0072AD10 /* LaunchViewController.h */,
+				18B636021A549B9F0072AD10 /* LaunchViewController.m */,
+				186C39BB1A3B7432005C0E12 /* TutorialViewController.h */,
+				186C39BC1A3B7432005C0E12 /* TutorialViewController.m */,
 				186C39B81A3B6A62005C0E12 /* MenuViewController.h */,
 				186C39B91A3B6A62005C0E12 /* MenuViewController.m */,
 				18D200071A5385F600024F4A /* RWTestViewController.h */,
 				18D200081A5385F600024F4A /* RWTestViewController.m */,
 				18D200091A5385F600024F4A /* RWTestViewController.xib */,
 			);
-			name = Menu;
+			name = "Menu & Launch";
 			sourceTree = "<group>";
 		};
 		A34E0BD0528F4A32A5527154 /* Frameworks */ = {
@@ -390,6 +395,7 @@
 				1871D3C11A51FC430072700E /* PlayersViewController.m in Sources */,
 				186C39951A3B6A37005C0E12 /* main.m in Sources */,
 				186C39BA1A3B6A62005C0E12 /* MenuViewController.m in Sources */,
+				185BC7581A572C7200309675 /* SettingsTableViewController.m in Sources */,
 				186C39C61A3B8D07005C0E12 /* CXCountDownLabel.m in Sources */,
 				183156291A40C92C0052DDE5 /* correctView.m in Sources */,
 				186C39BD1A3B7432005C0E12 /* TutorialViewController.m in Sources */,

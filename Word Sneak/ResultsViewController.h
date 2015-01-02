@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *home;
 - (IBAction)homeButton:(id)sender;
+- (IBAction)shareButton:(id)sender;
 
 @end

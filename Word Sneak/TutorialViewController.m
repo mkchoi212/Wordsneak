@@ -14,24 +14,53 @@
 
 @implementation TutorialViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Set the slide show view's alpha so that we can fade it in later
+    [self.slideShow setAlpha:0];
+    
+    // Set the content size
+    [self.slideShow setContentSize:CGSizeMake(1800, self.slideShow.frame.size.height)];
+    
+    // Set the "did reach page block"
+    [self.slideShow setDidReachPageBlock:^(NSInteger reachedPage) {
+        NSLog(@"Current Page: %li", (long)reachedPage);
+        self.pageControl.currentPage = reachedPage;
+    }];
+    // Add the animations
+    [self setupSlideShowSubviewsAndAnimations];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:1.0 delay:0.2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.slideShow setAlpha:1];
+    } completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupSlideShowSubviewsAndAnimations {
+    [self.thumbs setCenter:CGPointMake(self.thumbs.center.x-self.slideShow.frame.size.width, self.thumbs.center.y+self.slideShow.frame.size.height)];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.thumbs.center.x+self.slideShow.frame.size.width, self.thumbs.center.y-self.slideShow.frame.size.height)] delay:0]];
 }
-*/
 
+
+- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+
+
+- (IBAction)gucci:(id)sender {
+        [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

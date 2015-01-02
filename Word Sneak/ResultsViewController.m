@@ -76,6 +76,19 @@
                      completion:nil];
 }
 
+- (IBAction)shareButton:(id)sender {
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSString *textToShare = @"I got the high score on this awesome game called Word Sneak, available now on the Apple App Store!";
+      NSArray *itemsToShare = @[textToShare, screenshot];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 #pragma mark Rotation lock
 
 
