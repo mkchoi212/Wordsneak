@@ -22,7 +22,7 @@
     [self.slideShow setAlpha:0];
     
     // Set the content size
-    [self.slideShow setContentSize:CGSizeMake(1800, self.slideShow.frame.size.height)];
+    [self.slideShow setContentSize:CGSizeMake(2272, self.slideShow.frame.size.height)];
     
     // Set the "did reach page block"
     [self.slideShow setDidReachPageBlock:^(NSInteger reachedPage) {

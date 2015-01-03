@@ -13,7 +13,6 @@
 #import "PlayViewController.h"
 #import "correctView.h"
 #import "ResultsViewController.h"
-#import "PlayersViewController.h"
 
 @interface PlayViewController (){
     UIView *leftView;
@@ -60,7 +59,7 @@
     [correctAudio play];
 
     if(da_list.count!=0) { [self correctomundo]; }
-    //THE RESULT PAGE
+
     else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
@@ -69,7 +68,7 @@
         results.p3_score = playerScores[2];
         results.p4_score = playerScores[3];
         
-        [self.navigationController pushViewController:results animated:YES];
+        [self presentViewController:results animated:YES completion:nil];
     }
     
 }
@@ -313,6 +312,20 @@
   
 }
 
-#pragma mark Rotation lock
+#pragma mark iAD Delegate Methods
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:1];
+    [UIView commitAnimations];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:0];
+    [UIView commitAnimations];
+}
 
 @end

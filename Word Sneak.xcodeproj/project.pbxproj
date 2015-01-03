@@ -30,6 +30,8 @@
 		1871D3CC1A5261730072700E /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CA1A5261730072700E /* correct.wav */; };
 		1871D3CD1A5261730072700E /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CB1A5261730072700E /* wrong.wav */; };
 		1871D3D01A5263580072700E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3CE1A5261B30072700E /* AVFoundation.framework */; };
+		18A0CFB71A5764FF00FB2642 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3C81A525CDC0072700E /* CoreGraphics.framework */; };
+		18A0CFB91A57650400FB2642 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A0CFB81A57650400FB2642 /* iAd.framework */; };
 		18B636031A549B9F0072AD10 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B636021A549B9F0072AD10 /* LaunchViewController.m */; };
 		18D200031A53759B00024F4A /* AMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D200021A53759B00024F4A /* AMViewController.m */; };
 		18D2000A1A5385F600024F4A /* RWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D200081A5385F600024F4A /* RWTestViewController.m */; };
@@ -90,6 +92,7 @@
 		1871D3CA1A5261730072700E /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../../../../Downloads/correct.wav; sourceTree = "<group>"; };
 		1871D3CB1A5261730072700E /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = ../../../../Downloads/wrong.wav; sourceTree = "<group>"; };
 		1871D3CE1A5261B30072700E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18A0CFB81A57650400FB2642 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		18B636011A549B9F0072AD10 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		18B636021A549B9F0072AD10 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		18D200011A53759B00024F4A /* AMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMViewController.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A0CFB91A57650400FB2642 /* iAd.framework in Frameworks */,
+				18A0CFB71A5764FF00FB2642 /* CoreGraphics.framework in Frameworks */,
 				1871D3D01A5263580072700E /* AVFoundation.framework in Frameworks */,
 				1871D3C71A525CD50072700E /* Foundation.framework in Frameworks */,
 				1871D3C51A525CD00072700E /* UIKit.framework in Frameworks */,
@@ -234,6 +239,7 @@
 		A34E0BD0528F4A32A5527154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18A0CFB81A57650400FB2642 /* iAd.framework */,
 				1871D3CE1A5261B30072700E /* AVFoundation.framework */,
 				1871D3C81A525CDC0072700E /* CoreGraphics.framework */,
 				1871D3C61A525CD50072700E /* Foundation.framework */,
@@ -295,6 +301,7 @@
 				TargetAttributes = {
 					186C398E1A3B6A37005C0E12 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 7J57M62A98;
 					};
 					186C39A71A3B6A38005C0E12 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -516,9 +523,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Word Sneak/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -528,9 +538,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Word Sneak/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-
-@interface PlayViewController : UIViewController{
+@interface PlayViewController : UIViewController <ADBannerViewDelegate> {
     NSTimer *countdownTimer;
     int secondCount;
     NSMutableArray *word_list;

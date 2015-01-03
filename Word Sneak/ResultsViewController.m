@@ -47,8 +47,8 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     //cell.backgroundColor = [UIColor clearColor];
 
-    UILabel *playaName = [[UILabel alloc]initWithFrame:CGRectMake(15, 7, 115, 29)];
-    playaName.font = [UIFont fontWithName:@"AppleColorEmoji" size:17];
+    UILabel *playaName = [[UILabel alloc]initWithFrame:CGRectMake(35, 7, 135, 29)];
+    playaName.font = [UIFont fontWithName:@"AppleColorEmoji" size:20];
     playaName.textColor = [UIColor colorWithRed:255.0/255.0 green:163.0/255.0 blue:55.0/255.0 alpha:1];
     playaName.text = [playa objectAtIndex:indexPath.row];
     [cell.contentView addSubview:playaName];
@@ -90,6 +90,9 @@
 }
 
 #pragma mark Rotation lock
-
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
 
 @end

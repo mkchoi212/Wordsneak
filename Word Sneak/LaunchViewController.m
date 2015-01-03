@@ -7,22 +7,29 @@
 //
 
 #import "LaunchViewController.h"
+#import "MenuViewController.h"
 
 @implementation LaunchViewController
 
-/*- (IBAction)into_main_button {
-    MainViewController *main = [[MainViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:main animated:YES completion:NULL];
-}*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]){
+        MenuViewController * vc = [[MenuViewController alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
 
+    }
+    else{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenTutorial"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     // Set the slide show view's alpha so that we can fade it in later
         [self.slideShow setAlpha:0];
         
         // Set the content size
-        [self.slideShow setContentSize:CGSizeMake(1600, self.slideShow.frame.size.height)];
+        [self.slideShow setContentSize:CGSizeMake(1930, self.slideShow.frame.size.height)];
         
         // Set the "did reach page block"
         [self.slideShow setDidReachPageBlock:^(NSInteger reachedPage) {
