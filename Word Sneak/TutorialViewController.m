@@ -45,7 +45,7 @@
 
 - (void)setupSlideShowSubviewsAndAnimations {
     [self.thumbs setCenter:CGPointMake(self.thumbs.center.x-self.slideShow.frame.size.width, self.thumbs.center.y+self.slideShow.frame.size.height)];
-    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:1 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.thumbs.center.x+self.slideShow.frame.size.width, self.thumbs.center.y-self.slideShow.frame.size.height)] delay:0]];
+    [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:2 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.thumbs.center.x+self.slideShow.frame.size.width, self.thumbs.center.y-self.slideShow.frame.size.height)] delay:0]];
 }
 
 

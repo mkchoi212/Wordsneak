@@ -261,7 +261,7 @@
                     <connections>
                         <outlet property="pageControl" destination="6U6-Ce-6hw" id="Zkg-ff-yF4"/>
                         <outlet property="slideShow" destination="7BM-zs-JVg" id="Rpw-l5-MeV"/>
-                        <outlet property="thumbs" destination="6tR-3I-0Ga" id="vtc-lc-ebU"/>
+                        <outlet property="thumbs" destination="6tR-3I-0Ga" id="Orl-Jt-4YM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rb5-MY-ygQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,7 +746,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="convo" translatesAutoresizingMaskIntoConstraints="NO" id="uRM-CA-Kcm">
-                                                <rect key="frame" x="15" y="97" width="297" height="262"/>
+                                                <rect key="frame" x="12" y="77" width="297" height="284"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -837,7 +837,7 @@
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="***And get 0 points deducted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFG-AR-NVr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*And get 0 points deducted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFG-AR-NVr">
                                                 <rect key="frame" x="40" y="168" width="265" height="26"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -910,7 +910,7 @@
         <image name="Rated_R" width="461" height="170"/>
         <image name="Slide1" width="720" height="540"/>
         <image name="arrow" width="852" height="1338"/>
-        <image name="convo" width="292" height="261"/>
+        <image name="convo" width="500" height="500"/>
         <image name="correct" width="1334" height="750"/>
         <image name="correct2" width="1334" height="750"/>
         <image name="down" width="256" height="256"/>

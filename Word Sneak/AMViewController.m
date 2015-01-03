@@ -62,12 +62,13 @@
 
 - (BOOL)tagList:(AMTagListView *)tagListView shouldAddTagWithText:(NSString *)text resultingContentSize:(CGSize)size
 {
-   return 1;
+    //if add word is a blank word
+    return 1;
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	[self.tagListView addTag:textField.text];
-	[self.textField setText:@" "];
+	[self.textField setText:@""];
     [self.customList addObject:textField.text];
 	return YES;
 }

@@ -92,7 +92,7 @@
     [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.d2 page:3 keyPath:@"center" toValue:[NSValue valueWithCGPoint:CGPointMake(self.d2.center.x+self.slideShow.frame.size.width, self.d2.center.y+self.slideShow.frame.size.height*2)] delay:0]];
 
      
-      [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:3 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
+      [self.slideShow addAnimation:[DRDynamicSlideShowAnimation animationForSubview:self.thumbs page:4 keyPath:@"transform" fromValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-1.9)] toValue:[NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(0)] delay:0.1]];
    
 
 }
