@@ -30,27 +30,15 @@
 #define COCOAPODS_VERSION_MINOR_DRDynamicSlideShow 0
 #define COCOAPODS_VERSION_PATCH_DRDynamicSlideShow 1
 
-// JazzHands
-#define COCOAPODS_POD_AVAILABLE_JazzHands
-#define COCOAPODS_VERSION_MAJOR_JazzHands 0
-#define COCOAPODS_VERSION_MINOR_JazzHands 1
-#define COCOAPODS_VERSION_PATCH_JazzHands 1
-
-// MMAppSwitcher
-#define COCOAPODS_POD_AVAILABLE_MMAppSwitcher
-#define COCOAPODS_VERSION_MAJOR_MMAppSwitcher 0
-#define COCOAPODS_VERSION_MINOR_MMAppSwitcher 2
-#define COCOAPODS_VERSION_PATCH_MMAppSwitcher 0
+// JWGCircleCounter
+#define COCOAPODS_POD_AVAILABLE_JWGCircleCounter
+#define COCOAPODS_VERSION_MAJOR_JWGCircleCounter 0
+#define COCOAPODS_VERSION_MINOR_JWGCircleCounter 2
+#define COCOAPODS_VERSION_PATCH_JWGCircleCounter 1
 
 // RWBlurPopover
 #define COCOAPODS_POD_AVAILABLE_RWBlurPopover
 #define COCOAPODS_VERSION_MAJOR_RWBlurPopover 3
 #define COCOAPODS_VERSION_MINOR_RWBlurPopover 0
 #define COCOAPODS_VERSION_PATCH_RWBlurPopover 1
-
-// Shapes
-#define COCOAPODS_POD_AVAILABLE_Shapes
-#define COCOAPODS_VERSION_MAJOR_Shapes 1
-#define COCOAPODS_VERSION_MINOR_Shapes 0
-#define COCOAPODS_VERSION_PATCH_Shapes 0
 

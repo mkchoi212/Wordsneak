@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
+- (IBAction)buttonClicked:(id)sender;
 
 @end

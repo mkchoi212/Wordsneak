@@ -1,23 +1,27 @@
 //
-//  PlayersViewController.m
+//  TimeViewController.m
 //  Word Sneak
 //
-//  Created by Mike Choi on 12/29/14.
-//  Copyright (c) 2014 Life+ Dev. All rights reserved.
+//  Created by Mike Choi on 1/3/15.
+//  Copyright (c) 2015 Life+ Dev. All rights reserved.
 //
 
-#import "PlayersViewController.h"
+#import "TimeViewController.h"
 
-@interface PlayersViewController () <AKPickerViewDelegate, AKPickerViewDataSource>
-@property (nonatomic, strong) NSArray *titles;
+@interface TimeViewController () <AKPickerViewDataSource, AKPickerViewDelegate>
 @property (nonatomic, strong) AKPickerView *pickerView;
+@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic) NSInteger timeChosen;
 @end
 
-@implementation PlayersViewController
+@implementation TimeViewController
 
 - (void)viewDidLoad {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger savedTime = [defaults integerForKey:@"time"];
     [super viewDidLoad];
-  
+    
     self.pickerView = [[AKPickerView alloc] initWithFrame:self.view.bounds];
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
@@ -31,10 +35,14 @@
     self.pickerView.fisheyeFactor = 0.002;
     self.pickerView.pickerViewStyle = AKPickerViewStyle3D;
     
-    self.titles = @[@"1 PLAYA", @"2 PLAYERS", @"3 PLAYERS", @"4 PLAYERS"];
-    [self.view bringSubviewToFront:self.goButton];
-    [self.pickerView reloadData];
+    self.titles = @[@"1 Minute", @"2 Minutes", @"3 Minutes", @"4 Minutes", @"5 Minutes", @"6 Minutes"];
 
+    [self.pickerView reloadData];
+    [self.view bringSubviewToFront:self.saveButt];
+    [self.pickerView selectItem:savedTime animated:YES];
+    
+
+    
 }
 
 - (NSUInteger)numberOfItemsInPickerView:(AKPickerView *)pickerView
@@ -49,13 +57,16 @@
 
 - (void)pickerView:(AKPickerView *)pickerView didSelectItem:(NSInteger)item
 {
-    NSInteger playaNum = item;
+    self.timeChosen = item;
+}
+
+- (IBAction)save:(id)sender {
+    // Create strings and integer to store the text info
+    NSInteger time = self.timeChosen;
+    // Store the data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:playaNum forKey:@"playa"];
+    [defaults setInteger:time forKey:@"time"];
     [defaults synchronize];
+    [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)goPlaya:(id)sender {
-}
-
-
 @end

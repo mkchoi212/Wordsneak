@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "JWGCircleCounter.h"
 
-@interface PlayViewController : UIViewController <ADBannerViewDelegate> {
+@interface PlayViewController : UIViewController <ADBannerViewDelegate, JWGCircleCounterDelegate> {
     NSTimer *countdownTimer;
     int secondCount;
     NSMutableArray *word_list;
@@ -22,6 +23,7 @@
 - (IBAction)correctButton:(id)sender;
 - (IBAction)wrongButton:(id)sender;
 
+@property (strong, nonatomic) IBOutlet JWGCircleCounter *circleCounter;
 @property (weak, nonatomic) IBOutlet UILabel *intro1;
 @property (weak, nonatomic) IBOutlet UILabel *intro2;
 @property (weak, nonatomic) IBOutlet UILabel *player_name;

@@ -68,12 +68,10 @@
 
 - (IBAction)homeButton:(id)sender {
 
-    //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-   // MenuViewController *home = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MenuViewController *home = [storyboard instantiateViewControllerWithIdentifier:@"home"];
     [self dismissViewControllerAnimated:NO completion:nil];
-    [self presentViewController:[[[[UIApplication sharedApplication] delegate] window] rootViewController]
-                       animated:NO
-                     completion:nil];
+    [self.navigationController presentViewController:home animated:YES completion:nil];
 }
 
 - (IBAction)shareButton:(id)sender {

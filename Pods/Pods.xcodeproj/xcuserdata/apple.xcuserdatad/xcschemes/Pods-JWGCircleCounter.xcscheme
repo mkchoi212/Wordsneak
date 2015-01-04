@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64ECBAC39EF24EA6ADE5DA90"
-               BuildableName = "libPods.a"
-               BlueprintName = "Pods"
+               BlueprintIdentifier = "059D5A4C882D4A78B36B2E3C"
+               BuildableName = "libPods-JWGCircleCounter.a"
+               BlueprintName = "Pods-JWGCircleCounter"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

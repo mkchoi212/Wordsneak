@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *d1;
 @property (weak, nonatomic) IBOutlet UIImageView *d2;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbs;
+- (IBAction)go:(id)sender;
 
 @end

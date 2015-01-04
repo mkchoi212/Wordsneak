@@ -14,17 +14,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]){
-        MenuViewController * vc = [[MenuViewController alloc] init];
-        [self presentViewController:vc animated:YES completion:nil];
 
-    }
-    else{
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenTutorial"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
+
     // Set the slide show view's alpha so that we can fade it in later
         [self.slideShow setAlpha:0];
         
@@ -108,4 +99,9 @@
 }
 
 
+- (IBAction)go:(id)sender {
+
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+
+}
 @end

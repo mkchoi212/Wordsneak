@@ -24,22 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JazzHands.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MMAppSwitcher.xcscheme</key>
+		<key>Pods-JWGCircleCounter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-RWBlurPopover.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Shapes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>205FBE7D95234A21B9C3A100</key>
+		<key>059D5A4C882D4A78B36B2E3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E1A7C29D71F4FD1905BE0E6</key>
+		<key>180E420D1B184A82912AA795</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4710B2F9C0D64B2E8E003222</key>
+		<key>2D627AEDD78449729A1B022D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>794BBA07494A459591605454</key>
+		<key>46B52B806513429C9AEC87C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A0AFE0A690F4B8B83818D0C</key>
+		<key>602E85262ECB403ABCB08D5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9684D855E704BE4B11BF71F</key>
+		<key>64ECBAC39EF24EA6ADE5DA90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9B50189295F4ABDB9338245</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C8B8BF6EAA4844DA86F72B85</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8375AAFD321415EAC5A1074</key>
+		<key>96975AF8D5154F6393DFB8CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

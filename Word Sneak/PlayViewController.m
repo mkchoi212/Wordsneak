@@ -31,6 +31,10 @@
     self.da_button.hidden = TRUE;
     self.fail_button.hidden = TRUE;
     self.quitButton.hidden = TRUE;
+    self.circleCounter.hidden = TRUE;
+    self.circleCounter.delegate = self;
+    self.circleCounter.circleColor = [UIColor colorWithRed:141.0/255.0 green:25.0/255.0 blue:2.0/255.0 alpha:1];
+
     self.player_name.text = @"PLAYER 1";
     self.intro1.text = @"READY?";
     self.intro2.text = @"(Touch Screen To Start)";
@@ -39,7 +43,7 @@
     word_list = [[NSMutableArray alloc]initWithObjects:@"Baddonkadonk",
                  @"Grape Nuts", @"Pulp Fiction", @"Loofah", @"Floss", @"Female Bodybuilder", @"Oompa Loompa", @"Corn", @"Calamari", @"Moose", @"Zucchini", @"Pantaloons", @"Friend-zone", @"Kumquat", @"Pelvis", @"Couscous", @"Chicken Gordon Blue", @"Taco Tuesday", @"Taco Bell", @"Bill Cosby", @"Mexican Pizza", @"Toothbrush", @"Jonah Hill", @"Protein Shake", @"Ohio", @"Bunny Suit", @"Quinoa", @"Hyperbole", @"Britney Spears", @"Forehand Backhand", @"Sherlock", nil];
     
-    naughty_list = [[NSMutableArray alloc]initWithObjects: @"Anal Beads", @"Reverse Cowgirl", @"AIDS", @"Ghonoeria", @"Dildo", @"Hairy Penis", @"Cunt", @"Babies with Aids", @"Climax", @"Pubes", @"Jizz", @"Douche", @"Curved Penis", @"Condom", @"Water Soluble Lube", @"Spermicidal Lube", @"AIDS", @"STD", @"Banana Dick", @"Motorboat", @"Rape", @"Strap-on", @"Flavored Condoms", @"Glow in the Dark", @"Condoms", @"Pussy Monster", @"Crusty", @"Dirty Sanchez", @"Motherfucker", nil];
+    naughty_list = [[NSMutableArray alloc]initWithObjects: @"Anal Beads", @"Reverse Cowgirl", @"AIDS", @"Ghonoeria", @"Dildo", @"Hairy Penis", @"Cunt", @"Edible Sex Toys", @"Climax", @"Pubes", @"Jizz", @"Douche", @"Curved Penis", @"Condom", @"Water Soluble Lube", @"Spermicidal Lube", @"AIDS", @"STD", @"Banana Dick", @"Motorboat", @"Rape", @"Strap-on", @"Flavored Condoms", @"Glow in the Dark", @"Condoms", @"Pussy Monster", @"Crusty", @"Dirty Sanchez", @"Motherfucker", @"Flavored Condoms", nil];
     
     if (self.category == 0 ){
        da_list = [NSMutableArray arrayWithArray:word_list];
@@ -48,15 +52,24 @@
         da_list = [NSMutableArray arrayWithArray:naughty_list];
 
     }
-                            
-        NSLog(@"%ld", self.playerNumber);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger playanum = [defaults integerForKey:@"playa"];
+    self.playerNumber = playanum;
 }
 
 - (IBAction)correctButton:(id)sender {
+    ++numberPressed;
     NSURL *musicFile;
     musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"correct" ofType:@"wav"]];
     correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    [correctAudio play];
+    BOOL isSound= [[NSUserDefaults standardUserDefaults] objectForKey:@"Sound"];
+    
+    if (isSound){
+     [correctAudio play];
+    }
+    else{
+    }
 
     if(da_list.count!=0) { [self correctomundo]; }
 
@@ -70,14 +83,20 @@
         
         [self presentViewController:results animated:YES completion:nil];
     }
-    
 }
 
 - (IBAction)wrongButton:(id)sender {
+       ++numberPressed;
     NSURL *musicFile;
     musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"wrong" ofType:@"wav"]];
     correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    [correctAudio play];
+    BOOL isSound= [[NSUserDefaults standardUserDefaults] objectForKey:@"Sound"];
+    
+    if (isSound){
+        [correctAudio play];
+    }
+    else{
+    }
 
     if(da_list.count!=0) { [self wrongNumba]; }
     //THE RESULT PAGE
@@ -111,8 +130,6 @@
 }
 
 - (void)correctomundo{
-
-    ++numberPressed;
     YQLoginCardView *loginCardView = [[YQLoginCardView alloc] init];
     correctView *theView = [[[NSBundle mainBundle] loadNibNamed:@"correctView" owner:self options:nil] objectAtIndex:0];
         theView.headline.text = @"CORRECT";
@@ -120,43 +137,46 @@
     switch (self.playerNumber){
         case 0:
             theView.playerComment.text = @"You, again";
-            playerScores[0]++;
+            playerScores[0]+=100;
+            numberPressed = 0;
             break;
             
         case 1:
-            if (numberPressed % 2){
-                theView.playerComment.text = @"Player 2's Turn";
-                playerScores[0]++;
+            if (numberPressed % 2 == 0){
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[1]+=100;
             }
             else {
-                theView.playerComment.text = @"Player 1's Turn";
-                playerScores[1]++;
+                theView.playerComment.text = @"Player 2's Turn";
+                playerScores[0]+=100;
             }
             break;
             
         case 2:
-            if (numberPressed > 4){
-                numberPressed = 0;
+            if (numberPressed == 3){
                 theView.playerComment.text = @"Player 1's Turn";
-                playerScores[2]++;
+                playerScores[2]+=100;
+                numberPressed = 0;
             }
             else{
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                NSInteger temp = numberPressed+1;
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[numberPressed]++;
+                playerScores[temp-1]+=100;
             }
             break;
             
         case 3:
-            if (numberPressed > 5){
-                numberPressed = 0;
+            if (numberPressed == 4){
                 theView.playerComment.text = @"Player 1's Turn";
-                playerScores[3]++;
+                playerScores[3]+=100;
+                numberPressed = 0;
             }
             else{
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                NSInteger temp = numberPressed+1;
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[numberPressed]++;
+                playerScores[temp-1]+=100;
             }
             break;
             
@@ -170,7 +190,6 @@
 
 }
 - (void)wrongNumba{
-    ++numberPressed;
     YQLoginCardView *loginCardView = [[YQLoginCardView alloc] init];
     correctView *theView = [[[NSBundle mainBundle] loadNibNamed:@"correctView" owner:self options:nil] objectAtIndex:0];
     theView.headline.text = @"CAUGHT!";
@@ -179,48 +198,52 @@
     switch (self.playerNumber){
         case 0:
             theView.playerComment.text = @"You, again";
-            playerScores[0]--;
+            playerScores[0]-=50;
+            numberPressed = 0;
             break;
             
         case 1:
-            if (numberPressed % 2){
-                theView.playerComment.text = @"Player 2's Turn";
-                playerScores[0]--;
+            if (numberPressed % 2 == 0){
+                theView.playerComment.text = @"Player 1's Turn";
+                playerScores[1]-=50;
             }
             else {
-                theView.playerComment.text = @"Player 1's Turn";
-                playerScores[1]--;
+                theView.playerComment.text = @"Player 2's Turn";
+                playerScores[0]-=50;
             }
             break;
             
         case 2:
-            if (numberPressed > 4){
-                numberPressed = 0;
+            if (numberPressed == 3){
                 theView.playerComment.text = @"Player 1's Turn";
-                playerScores[2]--;
+                playerScores[2]-=50;
+                numberPressed = 0;
             }
             else{
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                NSInteger temp = numberPressed+1;
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[numberPressed]--;
+                playerScores[temp-1]-=50;
             }
             break;
             
         case 3:
-            if (numberPressed > 5){
-                numberPressed = 0;
+            if (numberPressed == 4){
                 theView.playerComment.text = @"Player 1's Turn";
-                playerScores[3]--;
+                playerScores[3]-=50;
+                numberPressed = 0;
             }
             else{
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)numberPressed];
+                NSInteger temp = numberPressed+1;
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[numberPressed]--;
+                playerScores[temp-1]-=50;
             }
             break;
             
         default:
             break;
+
     }
 
     
@@ -279,14 +302,20 @@
         self.da_button.hidden = FALSE;
         self.fail_button.hidden = FALSE;
         self.quitButton.hidden = FALSE;
+        self.circleCounter.hidden = FALSE;
         
         //ASSIGN WORD HERE!!!!
         NSUInteger randomIndex = arc4random() % [da_list count];
         self.da_word.text = [da_list objectAtIndex:randomIndex];
         [da_list removeObjectAtIndex: randomIndex];
         self.intro_tap.enabled = NO;
-        
         countdownTimer = nil;
+        
+        //CIRCLE COUNTER
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSInteger savedTime = [defaults integerForKey:@"time"];
+        [self.circleCounter startWithSeconds:savedTime*60];
+        
     }
 }
 
@@ -311,8 +340,20 @@
     results.p2_score = playerScores[1];
     results.p3_score = playerScores[2];
     results.p4_score = playerScores[3];
+    [self.navigationController presentViewController:results animated:YES completion:nil];
   
 }
+
+- (void)circleCounterTimeDidExpire:(JWGCircleCounter *)circleCounter {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ResultsViewController *results = [storyboard instantiateViewControllerWithIdentifier:@"results"];
+    results.p1_score = playerScores[0];
+    results.p2_score = playerScores[1];
+    results.p3_score = playerScores[2];
+    results.p4_score = playerScores[3];
+    [self.navigationController presentViewController:results animated:YES completion:nil];
+}
+
 
 #pragma mark iAD Delegate Methods
 
