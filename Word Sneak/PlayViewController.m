@@ -63,13 +63,8 @@
     NSURL *musicFile;
     musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"correct" ofType:@"wav"]];
     correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    BOOL isSound= [[NSUserDefaults standardUserDefaults] objectForKey:@"Sound"];
-    
-    if (isSound){
      [correctAudio play];
-    }
-    else{
-    }
+
 
     if(da_list.count!=0) { [self correctomundo]; }
 
@@ -90,13 +85,8 @@
     NSURL *musicFile;
     musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"wrong" ofType:@"wav"]];
     correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    BOOL isSound= [[NSUserDefaults standardUserDefaults] objectForKey:@"Sound"];
-    
-    if (isSound){
-        [correctAudio play];
-    }
-    else{
-    }
+    [correctAudio play];
+
 
     if(da_list.count!=0) { [self wrongNumba]; }
     //THE RESULT PAGE
@@ -162,7 +152,7 @@
                 NSInteger temp = numberPressed+1;
                 NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[temp-1]+=100;
+                playerScores[numberPressed-1]+=100;
             }
             break;
             
@@ -176,7 +166,7 @@
                 NSInteger temp = numberPressed+1;
                 NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
                 theView.playerComment.text = thecomment;
-                playerScores[temp-1]+=100;
+                playerScores[numberPressed-1]+=100;
             }
             break;
             
@@ -269,6 +259,11 @@
                            CGPointMake([self.view center].x + 30.0f, [self.view center].y)]];
     [[self.view layer] addAnimation:animation forKey:@"position"];
     [NSTimer scheduledTimerWithTimeInterval:.8 target:self selector:@selector(nextWord:) userInfo:nil repeats:NO];
+    NSURL *musicFile;
+    musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"skip" ofType:@"wav"]];
+    correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    [correctAudio play];
+
 
 }
 
@@ -295,6 +290,10 @@
         [countdownTimer invalidate];
         [self.timer_label removeFromSuperview];
         
+        NSURL *musicFile;
+        musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"go" ofType:@"wav"]];
+        correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+        [correctAudio play];
 
         //ADD HIDDEN SCREEN
         [self.view addSubview:leftView];
@@ -314,6 +313,10 @@
         //CIRCLE COUNTER
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSInteger savedTime = [defaults integerForKey:@"time"];
+        if (savedTime == 0){
+            savedTime = 2;
+        }
+        
         [self.circleCounter startWithSeconds:savedTime*60];
         
     }
@@ -331,6 +334,12 @@
     [self.player_name removeFromSuperview];
     
     [self setTimer];
+    NSURL *musicFile;
+    musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ready" ofType:@"wav"]];
+    correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    [correctAudio play];
+
+    
 }
 
 - (IBAction)quit:(id)sender {

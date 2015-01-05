@@ -21,15 +21,23 @@
 {
     [super viewDidLoad];
     
-    __unused UIImage *icon = [UIImage imageNamed:@"splash"];
+    if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults]
+                                objectForKey:@"splash"]]) {
+        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"splash"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        __unused UIImage *icon = [UIImage imageNamed:@"splash"];
+        
+        UIColor *color = [UIColor colorWithRed:27.0/255.0 green:125.0/255.0 blue:191.0/255.0 alpha:1];
+        
+        CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundColor:color];
+        splashView.animationDuration = 1.4;
+        [self.view addSubview:splashView];
+        self.splashView = splashView;
 
-    UIColor *color = [UIColor colorWithRed:27.0/255.0 green:125.0/255.0 blue:191.0/255.0 alpha:1];
-    
-    CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundColor:color];
-    splashView.animationDuration = 1.4;
-    [self.view addSubview:splashView];
-    self.splashView = splashView;
-}
+        
+    }
+   }
 
 - (void)viewDidAppear:(BOOL)animated
 {

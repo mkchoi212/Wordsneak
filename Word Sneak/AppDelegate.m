@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LaunchViewController.h"
-#import "MenuViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,28 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    /*LaunchViewController *initialViewController = [[LaunchViewController alloc] init];
-    MenuViewController *viewController = [[MenuViewController alloc] init];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
-        NSLog(@"not first launch");
-        self.viewController = [[MenuViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-        self.window.rootViewController = viewController;
+        // app already launched
     }
     else
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        self.initialViewController = [[LaunchViewController alloc] initWithNibName:@"InitialViewController" bundle:nil];
-        self.window.rootViewController = initialViewController;
-        NSLog(@"first launch");
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"time"];
+        LaunchViewController *vc = [[LaunchViewController alloc] init];
+          [[[[UIApplication sharedApplication] delegate] window] setRootViewController:vc];
     }
-    [self.window makeKeyAndVisible];*/
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -61,6 +53,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
 }
 
 @end

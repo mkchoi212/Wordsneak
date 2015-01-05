@@ -27,9 +27,13 @@
 		1871D3C11A51FC430072700E /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1871D3C01A51FC430072700E /* PlayersViewController.m */; };
 		1871D3C51A525CD00072700E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3C41A525CD00072700E /* UIKit.framework */; };
 		1871D3C71A525CD50072700E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3C61A525CD50072700E /* Foundation.framework */; };
-		1871D3CC1A5261730072700E /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CA1A5261730072700E /* correct.wav */; };
-		1871D3CD1A5261730072700E /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1871D3CB1A5261730072700E /* wrong.wav */; };
 		1871D3D01A5263580072700E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3CE1A5261B30072700E /* AVFoundation.framework */; };
+		189AFFC31A59FF0B00450F27 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFC21A59FF0B00450F27 /* correct.wav */; };
+		189AFFC81A5A005A00450F27 /* ending.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFC41A5A005A00450F27 /* ending.wav */; };
+		189AFFCA1A5A005A00450F27 /* skip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFC61A5A005A00450F27 /* skip.wav */; };
+		189AFFCB1A5A005A00450F27 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFC71A5A005A00450F27 /* wrong.wav */; };
+		189AFFCE1A5A084300450F27 /* go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFCC1A5A084300450F27 /* go.wav */; };
+		189AFFCF1A5A084300450F27 /* ready.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189AFFCD1A5A084300450F27 /* ready.wav */; };
 		18A0CFB71A5764FF00FB2642 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871D3C81A525CDC0072700E /* CoreGraphics.framework */; };
 		18A0CFB91A57650400FB2642 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A0CFB81A57650400FB2642 /* iAd.framework */; };
 		18A0CFBC1A586DB700FB2642 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A0CFBB1A586DB700FB2642 /* TimeViewController.m */; };
@@ -90,9 +94,13 @@
 		1871D3C41A525CD00072700E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1871D3C61A525CD50072700E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1871D3C81A525CDC0072700E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1871D3CA1A5261730072700E /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../../../../Downloads/correct.wav; sourceTree = "<group>"; };
-		1871D3CB1A5261730072700E /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = ../../../../Downloads/wrong.wav; sourceTree = "<group>"; };
 		1871D3CE1A5261B30072700E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		189AFFC21A59FF0B00450F27 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
+		189AFFC41A5A005A00450F27 /* ending.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ending.wav; sourceTree = "<group>"; };
+		189AFFC61A5A005A00450F27 /* skip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skip.wav; sourceTree = "<group>"; };
+		189AFFC71A5A005A00450F27 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
+		189AFFCC1A5A084300450F27 /* go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = go.wav; sourceTree = "<group>"; };
+		189AFFCD1A5A084300450F27 /* ready.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ready.wav; sourceTree = "<group>"; };
 		18A0CFB81A57650400FB2642 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		18A0CFBA1A586DB700FB2642 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
 		18A0CFBB1A586DB700FB2642 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
@@ -185,8 +193,12 @@
 		186C39921A3B6A37005C0E12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1871D3CA1A5261730072700E /* correct.wav */,
-				1871D3CB1A5261730072700E /* wrong.wav */,
+				189AFFCC1A5A084300450F27 /* go.wav */,
+				189AFFCD1A5A084300450F27 /* ready.wav */,
+				189AFFC41A5A005A00450F27 /* ending.wav */,
+				189AFFC61A5A005A00450F27 /* skip.wav */,
+				189AFFC71A5A005A00450F27 /* wrong.wav */,
+				189AFFC21A59FF0B00450F27 /* correct.wav */,
 				1831561E1A40C0320052DDE5 /* YQCardBaseView.h */,
 				1831561F1A40C0320052DDE5 /* YQCardBaseView.m */,
 				183156201A40C0320052DDE5 /* YQLoginCardView.h */,
@@ -347,10 +359,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1831561D1A40A7B10052DDE5 /* correctView.xib in Resources */,
-				1871D3CD1A5261730072700E /* wrong.wav in Resources */,
-				1871D3CC1A5261730072700E /* correct.wav in Resources */,
 				18D2000B1A5385F600024F4A /* RWTestViewController.xib in Resources */,
+				189AFFCF1A5A084300450F27 /* ready.wav in Resources */,
+				189AFFCA1A5A005A00450F27 /* skip.wav in Resources */,
+				189AFFCE1A5A084300450F27 /* go.wav in Resources */,
+				189AFFCB1A5A005A00450F27 /* wrong.wav in Resources */,
 				186C399E1A3B6A38005C0E12 /* Main.storyboard in Resources */,
+				189AFFC81A5A005A00450F27 /* ending.wav in Resources */,
+				189AFFC31A59FF0B00450F27 /* correct.wav in Resources */,
 				186C39A01A3B6A38005C0E12 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,9 +39,7 @@
 
     [self.pickerView reloadData];
     [self.view bringSubviewToFront:self.saveButt];
-    [self.pickerView selectItem:savedTime animated:YES];
-    
-
+       [self.pickerView selectItem:savedTime animated:YES];
     
 }
 
