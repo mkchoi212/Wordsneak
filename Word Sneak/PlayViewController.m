@@ -150,7 +150,7 @@
             }
             else{
                 NSInteger temp = numberPressed+1;
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)temp];
                 theView.playerComment.text = thecomment;
                 playerScores[numberPressed-1]+=100;
             }
@@ -164,7 +164,7 @@
             }
             else{
                 NSInteger temp = numberPressed+1;
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)temp];
                 theView.playerComment.text = thecomment;
                 playerScores[numberPressed-1]+=100;
             }
@@ -211,7 +211,7 @@
             }
             else{
                 NSInteger temp = numberPressed+1;
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)temp];
                 theView.playerComment.text = thecomment;
                 playerScores[temp-1]-=50;
             }
@@ -225,7 +225,7 @@
             }
             else{
                 NSInteger temp = numberPressed+1;
-                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", temp];
+                NSString *thecomment = [NSString stringWithFormat: @"Player %ld's Turn", (long)temp];
                 theView.playerComment.text = thecomment;
                 playerScores[temp-1]-=50;
             }

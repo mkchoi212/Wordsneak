@@ -26,7 +26,6 @@
     
     // Set the "did reach page block"
     [self.slideShow setDidReachPageBlock:^(NSInteger reachedPage) {
-        NSLog(@"Current Page: %li", (long)reachedPage);
         self.pageControl.currentPage = reachedPage;
     }];
     // Add the animations

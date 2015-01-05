@@ -20,12 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults]
-                                objectForKey:@"splash"]]) {
-        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"splash"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]){
+
         __unused UIImage *icon = [UIImage imageNamed:@"splash"];
         
         UIColor *color = [UIColor colorWithRed:27.0/255.0 green:125.0/255.0 blue:191.0/255.0 alpha:1];
@@ -34,8 +30,7 @@
         splashView.animationDuration = 1.4;
         [self.view addSubview:splashView];
         self.splashView = splashView;
-
-        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"HasLaunchedOnce"];
     }
    }
 
@@ -69,6 +64,8 @@
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 - (void)showTestPopover {
     RWTestViewController *vc = [[RWTestViewController alloc] initWithNibName:nil bundle:nil];

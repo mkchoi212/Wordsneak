@@ -730,7 +730,7 @@
         <!--Launch View Controller-->
         <scene sceneID="Jhn-hG-xu9">
             <objects>
-                <viewController id="wef-YT-zBg" customClass="LaunchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wef-YT-zBg" customClass="LaunchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7NP-J3-trk"/>
                         <viewControllerLayoutGuide type="bottom" id="cwY-Zj-9va"/>
@@ -920,6 +920,7 @@
                         <outlet property="arrow2" destination="HEB-FW-W5e" id="s0P-NN-ihO"/>
                         <outlet property="d1" destination="Vj6-l2-07G" id="fbc-Fq-94T"/>
                         <outlet property="d2" destination="0TG-x6-9ok" id="dcK-HD-KFe"/>
+                        <outlet property="home" destination="kBb-T1-n3M" id="nU1-1t-tK0"/>
                         <outlet property="pageControl" destination="bEs-Kn-6Ef" id="huA-8f-FtX"/>
                         <outlet property="pic_2" destination="uRM-CA-Kcm" id="X0a-f1-rW3"/>
                         <outlet property="slideShow" destination="5es-VJ-g2O" id="JVO-sT-zo9"/>
@@ -949,6 +950,6 @@
         <image name="verticle" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pm5-TP-p1i"/>
+        <segue reference="3N5-pm-qJb"/>
     </inferredMetricsTieBreakers>
 </document>

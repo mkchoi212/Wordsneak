@@ -14,9 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-    // Set the slide show view's alpha so that we can fade it in later
+        // Set the slide show view's alpha so that we can fade it in later
         [self.slideShow setAlpha:0];
         
         // Set the content size
@@ -24,8 +22,7 @@
         
         // Set the "did reach page block"
         [self.slideShow setDidReachPageBlock:^(NSInteger reachedPage) {
-            NSLog(@"Current Page: %li", (long)reachedPage);
-            self.pageControl.currentPage = reachedPage;
+        self.pageControl.currentPage = reachedPage;
         }];
         // Add the animations
        [self setupSlideShowSubviewsAndAnimations];
@@ -98,7 +95,7 @@
     return UIInterfaceOrientationMaskPortrait + UIInterfaceOrientationMaskPortraitUpsideDown;
 }
 
-
+//DETECT FIRST LAUNCH
 - (IBAction)go:(id)sender {
 
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];

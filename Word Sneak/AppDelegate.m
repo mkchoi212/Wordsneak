@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LaunchViewController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,21 +16,28 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-    {
-        // app already launched
-    }
-    else
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    if(![[NSUserDefaults standardUserDefaults] dictionaryForKey:@"HasLaunchedOnce"]){
+        LaunchViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"tutorial"];
+        self.window.rootViewController = viewController;
+      //  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"time"];
-        LaunchViewController *vc = [[LaunchViewController alloc] init];
-          [[[[UIApplication sharedApplication] delegate] window] setRootViewController:vc];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    } else {
+        MenuViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+        self.window.rootViewController = viewController;
     }
+    
+    [self.window makeKeyAndVisible];
+    
+    // Override point for customization after application launch.
+    
     return YES;
 }
 
