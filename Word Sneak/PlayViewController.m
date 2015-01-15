@@ -19,6 +19,7 @@
     UIView *rightView;
     CGFloat divisionX;
     NSInteger numberPressed;
+    NSInteger countTemp;
 }
 
 @end
@@ -332,14 +333,15 @@
     [self.intro1 removeFromSuperview];
     [self.intro2 removeFromSuperview];
     [self.player_name removeFromSuperview];
-    
-    [self setTimer];
     NSURL *musicFile;
     musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"ready" ofType:@"wav"]];
     correctAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    [correctAudio play];
+    if(countTemp == 0){
+    [self setTimer];
 
-    
+    }
+    countTemp++;
+        [correctAudio play];
 }
 
 - (IBAction)quit:(id)sender {

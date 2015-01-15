@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LaunchViewController.h"
 #import "MenuViewController.h"
+#import "MainNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -18,25 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    if(![[NSUserDefaults standardUserDefaults] dictionaryForKey:@"HasLaunchedOnce"]){
-        LaunchViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"tutorial"];
-        self.window.rootViewController = viewController;
-      //  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"time"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-
-    } else {
-        MenuViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
-        self.window.rootViewController = viewController;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        MenuViewController *menu=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"home"];
+        
+        MainNavigationController *navController=[[MainNavigationController alloc]initWithRootViewController:menu];
+        self.window.rootViewController=navController;
     }
-    
-    [self.window makeKeyAndVisible];
-    
-    // Override point for customization after application launch.
+    else
+    {
+        LaunchViewController *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"tutorial"];
+        self.window.rootViewController=vc;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     
     return YES;
 }

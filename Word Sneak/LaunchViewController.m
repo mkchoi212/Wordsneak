@@ -97,8 +97,5 @@
 
 //DETECT FIRST LAUNCH
 - (IBAction)go:(id)sender {
-
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-
 }
 @end
