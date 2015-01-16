@@ -19,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#warning LOOK HERE!!!
+    /* MY ATTEMPT AT THE PROBLEM: YOU MAY COMPLETELY IGNORE THIS CODE
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         MenuViewController *menu=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"home"];
@@ -33,7 +35,7 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
+    */
     return YES;
 }
 

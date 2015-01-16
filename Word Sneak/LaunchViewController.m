@@ -95,7 +95,4 @@
     return UIInterfaceOrientationMaskPortrait + UIInterfaceOrientationMaskPortraitUpsideDown;
 }
 
-//DETECT FIRST LAUNCH
-- (IBAction)go:(id)sender {
-}
 @end

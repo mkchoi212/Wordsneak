@@ -891,7 +891,6 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="go:" destination="wef-YT-zBg" eventType="touchUpInside" id="mQK-6g-Tz5"/>
                                                     <segue destination="Ms2-xd-gpn" kind="show" id="3N5-pm-qJb"/>
                                                 </connections>
                                             </button>
